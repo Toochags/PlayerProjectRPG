@@ -142,21 +142,7 @@ class Player
     }
     
     // interesting methods *****************************
-    
-    // postcondition: turn to the other direction (1 to -1 and vice versa)
-    public void turn()
-    {
-        myDirection *= -1;
-    }
-    
-    // postcondition: moves one location in current pointed direction
-    public void move()
-    {
-        myX = myX + myDirection * mySpeed;
-    }
-    
-    // TODO: add a toString method here and use it in the client class to 
-    // show the state (i.e. status) of the player
+   
     
 }// end of Player class
 
@@ -166,24 +152,24 @@ class Boss
     // instance variables (properties) *******************
     private int myDirection;   // -1 west, 1 east
     private int myX;           // location on x-axis
-    private int mySpeed;       // speed of player
+    private int myHealth;       // Health points of Boss
     
     // default constructor *******************************
     
     public Boss()
     {
-        myDirection = 1;
-        myX = 0;
-        mySpeed = 1;
+        myDirection = -1;
+        myX = 5;
+        myHealth = 1;
     }
     
     // other constructor *********************************
     
-    public Boss(int direction, int x, int speed)
+    public Boss(int direction, int x, int health)
     {
         myDirection = direction;
         myX = x;
-        mySpeed = speed;
+        myHealth = health;
     }
     
     // accessor methods (getters) ***********************
@@ -215,27 +201,12 @@ class Boss
         myX = x;
     }
 
-    public void setSpeed(int speed)
+    public void setHealth(int health)
     {
-        mySpeed = speed;
+        myHealth = helath;
     }
     
     // interesting methods *****************************
-    
-    // postcondition: turn to the other direction (1 to -1 and vice versa)
-    public void turn()
-    {
-        myDirection *= -1;
-    }
-    
-    // postcondition: moves one location in current pointed direction
-    public void move()
-    {
-        myX = myX + myDirection * mySpeed;
-    }
-    
-    // TODO: add a toString method here and use it in the client class to 
-    // show the state (i.e. status) of the player
     
 }// end of Player class
 
