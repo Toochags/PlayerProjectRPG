@@ -87,11 +87,90 @@ class Player
     // instance variables (properties) *******************
     private int myDirection;   // -1 west, 1 east
     private int myX;           // location on x-axis
-    private int mySpeed;       // speed of player
+    private int myHealthd;       // speed of player
     
     // default constructor *******************************
     
     public Player()
+    {
+        myDirection = 1;
+        myX = 0;
+        myHealth = 1;
+    }
+    
+    // other constructor *********************************
+    
+    public Player(int direction, int x, int speed)
+    {
+        myDirection = direction;
+        myX = x;
+        myHealth = health;
+    }
+    
+    // accessor methods (getters) ***********************
+    
+    public int getDirection()
+    {
+        return myDirection;
+    }
+    
+    public int getX()
+    {
+        return myX;
+    }
+
+    public int getHealth()
+    {
+        return myHealth;
+    }
+ 
+    // modifier methods (setters or mutators) *************
+    
+    public void setDirection(int direction)
+    {
+        myDirection = direction;
+    }
+    
+    public void setX(int x)
+    {
+        myX = x;
+    }
+
+    public void setSpeed(int speed)
+    {
+        mySpeed = speed;
+    }
+    
+    // interesting methods *****************************
+    
+    // postcondition: turn to the other direction (1 to -1 and vice versa)
+    public void turn()
+    {
+        myDirection *= -1;
+    }
+    
+    // postcondition: moves one location in current pointed direction
+    public void move()
+    {
+        myX = myX + myDirection * mySpeed;
+    }
+    
+    // TODO: add a toString method here and use it in the client class to 
+    // show the state (i.e. status) of the player
+    
+}// end of Player class
+
+//////////////////////////////////////////////////////
+class Boss
+{
+    // instance variables (properties) *******************
+    private int myDirection;   // -1 west, 1 east
+    private int myX;           // location on x-axis
+    private int mySpeed;       // speed of player
+    
+    // default constructor *******************************
+    
+    public Boss()
     {
         myDirection = 1;
         myX = 0;
@@ -100,7 +179,7 @@ class Player
     
     // other constructor *********************************
     
-    public Player(int direction, int x, int speed)
+    public Boss(int direction, int x, int speed)
     {
         myDirection = direction;
         myX = x;
@@ -142,71 +221,21 @@ class Player
     }
     
     // interesting methods *****************************
-   
     
-}// end of Player class
-
-//////////////////////////////////////////////////////
-class Boss
-{
-    // instance variables (properties) *******************
-    private int myDirection;   // -1 west, 1 east
-    private int myX;           // location on x-axis
-    private int myHealth;       // Health points of Boss
-    
-    // default constructor *******************************
-    
-    public Boss()
+    // postcondition: turn to the other direction (1 to -1 and vice versa)
+    public void turn()
     {
-        myDirection = -1;
-        myX = 5;
-        myHealth = 1;
+        myDirection *= -1;
     }
     
-    // other constructor *********************************
-    
-    public Boss(int direction, int x, int health)
+    // postcondition: moves one location in current pointed direction
+    public void move()
     {
-        myDirection = direction;
-        myX = x;
-        myHealth = health;
+        myX = myX + myDirection * mySpeed;
     }
     
-    // accessor methods (getters) ***********************
-    
-    public int getDirection()
-    {
-        return myDirection;
-    }
-    
-    public int getX()
-    {
-        return myX;
-    }
-
-    public int getSpeed()
-    {
-        return mySpeed;
-    }
- 
-    // modifier methods (setters or mutators) *************
-    
-    public void setDirection(int direction)
-    {
-        myDirection = direction;
-    }
-    
-    public void setX(int x)
-    {
-        myX = x;
-    }
-
-    public void setHealth(int health)
-    {
-        myHealth = helath;
-    }
-    
-    // interesting methods *****************************
+    // TODO: add a toString method here and use it in the client class to 
+    // show the state (i.e. status) of the player
     
 }// end of Player class
 
