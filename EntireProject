@@ -12,7 +12,7 @@ public class PlayerProject
 
     public static void main(String[] args) 
     {
-        Player cloud = new Player(1, 1, 3);   // player to place into the world (direction, speed, x)
+        Player cloud = new Player(1, 9000, 3);   // player to place into the world (direction, health, x)
         
         World world = new World();              // the World object that contains Player objects
         
@@ -87,7 +87,7 @@ class Player
     // instance variables (properties) *******************
     private int myDirection;   // -1 west, 1 east
     private int myX;           // location on x-axis
-    private int mySpeed;       // speed of player
+    private int myHealth;       // speed of player
     
     // default constructor *******************************
     
@@ -95,7 +95,7 @@ class Player
     {
         myDirection = 1;
         myX = 0;
-        mySpeed = 1;
+        myHealth = 9000;
     }
     
     // other constructor *********************************
@@ -104,7 +104,7 @@ class Player
     {
         myDirection = direction;
         myX = x;
-        mySpeed = speed;
+        myHealth = health;
     }
     
     // accessor methods (getters) ***********************
@@ -119,9 +119,9 @@ class Player
         return myX;
     }
 
-    public int getSpeed()
+    public int getHealth()
     {
-        return mySpeed;
+        return myHealth;
     }
  
     // modifier methods (setters or mutators) *************
@@ -138,7 +138,7 @@ class Player
 
     public void setSpeed(int speed)
     {
-        mySpeed = speed;
+        myHealth = health;
     }
     
     // interesting methods *****************************
@@ -184,9 +184,9 @@ class Boss
         return myX;
     }
 
-    public int getSpeed()
+    public int getHealth()
     {
-        return mySpeed;
+        return myHealth;
     }
  
     // modifier methods (setters or mutators) *************
@@ -203,7 +203,7 @@ class Boss
 
     public void setHealth(int health)
     {
-        myHealth = helath;
+        myHealth = health;
     }
     
     // interesting methods *****************************
